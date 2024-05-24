@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600&family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600;700&display=swap");
+
+@media screen and (min-width: 650px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+
+  .app-bar__brand .logo span {
+    font-size: 1.5em;
+  }
+
+  .app-bar__brand .logo {
+    font-size: 1.5em;
+  }
+
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+
+  /*
+    detail
+  */
+  .restaurant__name {
+    text-align: center;
+    padding: 2vw;
+  }
+
+  .restaurant__description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .restaurant__poster {
+    padding-left: 8vw;
+    padding-bottom: 2vh;
+    width: 500px;
+  }
+
+  .restaurant__info {
+    padding-right: 6vw;
+    padding-left: 10px;
+    padding-top: 0;
+  }
+
+  .restaurant__descriptionkedua {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: #e9f0ef;
+  }
+
+  .restaurant__menus {
+    padding-left: 8vw;
+  }
+
+  .restaurant__descriptionkedua h3 {
+    font-size: 1.5rem;
+    padding-top: 20px;
+    text-align: left;
+  }
+
+  .restaurant__info button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .restaurant__info button:hover {
+    background-color: #2980b9;
+  }
+
+  .restaurant__menu {
+    display: flex;
+    padding: 3vw;
+  }
+
+  .restaurant__menu .food {
+    padding-right: 7vw;
+  }
+
+  .restaurant__reviews {
+    background-color: #344c64;
+    color: #fff;
+  }
+  .reviews__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2vw;
+    grid-gap: 20px;
+  }
+
+  .review {
+    padding: 1vh;
+    background-color: #e9f0ef;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .restaurant__reviews h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app-bar__brand .logo span {
+    font-size: 2em;
+  }
+
+  .app-bar__brand .logo {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 850px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1600px) {
+}
