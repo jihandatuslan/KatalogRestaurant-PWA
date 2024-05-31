@@ -44,5 +44,7 @@ describe("Liking A restaurant", () => {
     // Memastikan film berhasil disukai
     const restaurant = await FavoriterestaurantIdb.getrestaurant(1);
     expect(restaurant).toEqual({ id: 1 });
+
+    await Favoritedb.deleteRestaurant(1);
   });
 });
