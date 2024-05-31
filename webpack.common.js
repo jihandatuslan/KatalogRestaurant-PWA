@@ -1,11 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, "src/scripts/index.js"),
-    sw: path.resolve(__dirname, "src/scripts/sw.js"),
   },
   output: {
     filename: "[name].bundle.js",
@@ -39,6 +39,10 @@ module.exports = {
           to: path.resolve(__dirname, "dist/"),
         },
       ],
+    }),
+    // eslint-disable-next-line no-undef
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: "./sw.bundle.js",
     }),
   ],
 };

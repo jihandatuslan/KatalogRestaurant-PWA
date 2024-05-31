@@ -1,11 +1,16 @@
 import UrlParser from "../../routes/url-parser";
 import RestaurantList from "../../data/restaurantdb-source";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
+import {
+  createLikeButtonTemplate,
+  createRestaurantDetailTemplate,
+} from "../templates/template-creator";
+import LikeButtonInitiator from "../../utils/like-button-initiator";
 
 const Detail = {
   async render() {
     return `
       <div id="restaurant" class="restaurant"></div>
+      <div id="likeButtonContainer"></div>
     `;
   },
 
@@ -13,36 +18,26 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantList.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector("#restaurant");
+    const likeButtonContainer = document.querySelector("#likeButtonContainer");
 
-    if (restaurant) {
-      // eslint-disable-next-line operator-linebreak
-      restaurantContainer.innerHTML =
-        createRestaurantDetailTemplate(restaurant);
+    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+    likeButtonContainer.innerHTML = createLikeButtonTemplate();
 
-      const favoriteButton = document.querySelector("#favoriteButton");
-
-      const isFavorite = await RestaurantList.isRestaurantFavorite(
-        // eslint-disable-next-line comma-dangle
-        restaurant.id
-      );
-      favoriteButton.textContent = isFavorite
-        ? "Remove from Favorite"
-        : "Add to Favorite";
-
-      favoriteButton.addEventListener("click", async () => {
-        if (isFavorite) {
-          await RestaurantList.removeFavoriteRestaurant(restaurant.id);
-          favoriteButton.textContent = "Add to Favorite";
-        } else {
-          await RestaurantList.addFavoriteRestaurant(restaurant);
-          favoriteButton.textContent = "Remove from Favorite";
-        }
-      });
-    } else {
-      // eslint-disable-next-line operator-linebreak
-      restaurantContainer.innerHTML =
-        "<p>Restaurant data is not available.</p>";
-    }
+    // eslint-disable-next-line no-undef
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector("#likeButtonContainer"),
+      restaurant: {
+        id: restaurant.id,
+        name: restaurant.name,
+        description: restaurant.description,
+        pictureId: restaurant.pictureId,
+        city: restaurant.city,
+        rating: restaurant.rating,
+      },
+    });
+  },
+  catch(error) {
+    console.error("Error in rendering the detail page:", error);
   },
 };
 
