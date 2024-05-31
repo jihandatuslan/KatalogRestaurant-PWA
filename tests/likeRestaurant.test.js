@@ -42,9 +42,9 @@ describe("Liking A restaurant", () => {
     document.querySelector("#likeButton").dispatchEvent(new Event("click"));
 
     // Memastikan film berhasil disukai
-    const restaurant = await FavoriterestaurantIdb.getrestaurant(1);
+    const restaurant = await FavoriterestaurantIdb.getRestaurant(1);
     expect(restaurant).toEqual({ id: 1 });
 
-    await Favoritedb.deleteRestaurant(1);
+    await FavoriterestaurantIdb.deleteRestaurant(1);
   });
 });
