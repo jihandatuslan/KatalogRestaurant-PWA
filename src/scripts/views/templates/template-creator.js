@@ -15,7 +15,6 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <p>${restaurant.city}</p>
       <h4>Description</h4>
       <p>${restaurant.description}</p>
-      <button id="favoriteButton" class="favorite-button">Add to Favorite</button>
     </div>
   </div>
   <div class="restaurant__descriptionkedua">
@@ -76,13 +75,13 @@ const RestaurantItemTemplate = (restaurant) => `
   </div>
 `;
 
-const createLikeButtonTemplate = () => `
+const createLikeRestaurantButtonTemplate = () => `
   <button aria-label="like this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createUnlikeRestaurantButtonTemplate = () => `
   <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
@@ -91,6 +90,6 @@ const createLikedButtonTemplate = () => `
 export {
   RestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };

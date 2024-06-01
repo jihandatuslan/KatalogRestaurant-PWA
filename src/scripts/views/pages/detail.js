@@ -1,10 +1,10 @@
 import UrlParser from "../../routes/url-parser";
 import RestaurantList from "../../data/restaurantdb-source";
 import {
-  createLikeButtonTemplate,
+  createLikeRestaurantButtonTemplate,
   createRestaurantDetailTemplate,
 } from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import LikeButtonInitiator from "../../utils/LikeButtonPresenter";
 
 const Detail = {
   async render() {
@@ -21,7 +21,7 @@ const Detail = {
     const likeButtonContainer = document.querySelector("#likeButtonContainer");
 
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-    likeButtonContainer.innerHTML = createLikeButtonTemplate();
+    likeButtonContainer.innerHTML = createLikeRestaurantButtonTemplate();
 
     // eslint-disable-next-line no-undef
     LikeButtonInitiator.init({
