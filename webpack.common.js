@@ -4,8 +4,7 @@ const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
 const path = require("path");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   entry: {
@@ -56,6 +55,20 @@ module.exports = {
     // eslint-disable-next-line no-undef
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: "./sw.bundle.js",
+      runtimeCaching: [
+        {
+          urlPattern: /https:\/\/restaurant-api.dicoding.dev/,
+          handler: "StaleWhileRevalidate",
+          options: {
+            cacheName: "api-cache",
+            expiration: {
+              maxEntries: 100,
+              maxAgeSeconds: 72 * 60 * 60,
+            },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+      ],
     }),
 
     new ImageminWebpackPlugin({

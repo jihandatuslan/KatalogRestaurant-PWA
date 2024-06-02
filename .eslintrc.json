@@ -21,6 +21,8 @@
     "no-underscore-dangle": 0,
     "no-restricted-globals": 0,
     "linebreak-style": 0,
-    "quotes": 0
+    "quotes": 0,
+    "comma-dangle": "off",
+    "space-before-function-paren": "off"
   }
 }

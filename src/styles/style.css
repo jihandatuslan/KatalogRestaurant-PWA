@@ -180,8 +180,8 @@ main {
 }
 
 /* Hero section */
-.hero {
-  background-image: url("/src/public/hero-image_2.jpg");
+/* .hero {
+  background-image: url("/src/public/images/hero-image_2.jpg");
   background-size: cover;
   background-position: center;
   height: 50vh;
@@ -193,7 +193,21 @@ main {
   color: white;
   padding: 0;
   margin: 0;
+} */
+
+.hero {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
 .hero .kata {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;

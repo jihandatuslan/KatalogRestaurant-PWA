@@ -1,5 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600&family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600;700&display=swap");
 
+@media (max-width: 650px) {
+  .hero {
+    background-image: url("/dist/images/hero-image_2-small.jpg");
+  }
+  .restaurant-item__image {
+    width: 100%;
+  }
+  #text {
+    font-size: 20px;
+  }
+  footer p {
+    font-size: 12px;
+  }
+
+  footer span {
+    font-size: 16px;
+  }
+  .app-bar__brand .logo span {
+    font-size: 20px;
+  }
+
+  .app-bar__brand .logo {
+    font-size: 20px;
+  }
+
+  .hero h1 {
+    font-size: 16px;
+  }
+  .hero p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 651px) {
+  .hero {
+    background-image: url("/dist/images/hero-image_2-large.jpg");
+  }
+  .restaurant-item__image {
+    width: 100%;
+    height: 30vh;
+  }
+}
+
 @media screen and (min-width: 650px) {
   .app-bar {
     grid-template-columns: 1fr auto;
